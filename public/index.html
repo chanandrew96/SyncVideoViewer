@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>同步 YouTube 播放器</title>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+  <div class="video-input">
+    <div class="video-input-group">
+      <input type="text" id="videoUrlInput" placeholder="輸入 YouTube 連結 (例如: https://www.youtube.com/watch?v=VIDEO_ID)" />
+      <button id="changeVideoBtn" class="change-video-btn" disabled>📺 更換視頻</button>
+    </div>
+    <div class="video-info" id="videoInfo">當前視頻: rWlO954SvRs</div>
+  </div>
+  
+  <div class="controls">
+    <button id="syncBtn" class="sync-btn" disabled>🔄 強制同步</button>
+    <button id="syncWithPlayingBtn" class="sync-with-playing-btn" disabled>▶️ 與播放中同步</button>
+    <div id="syncFeedback" class="sync-feedback"></div>
+  </div>
+  
+  <div id="error" class="error" style="display: none;"></div>
+  <div class="status" id="status">正在載入播放器...</div>
+  <div id="player"></div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
